@@ -27,20 +27,21 @@ function send_search(){
 	
 	var group_id = $("input[name=group_selected]:checked").val();
 	var search_term = $("#search_bar").val();
+	var tok = $("#token").val();
 	if(search_term === ""){
 		error("Please enter a search term")
 	}else if(group_id == null){
 		error("Please select a group to search")
 	}else{
-		alert("search sent")
-		search(group_id, search_term)
+		alert(group_id)
+		search(group_id, search_term, tok)
 		
 	}
 	
 }
-function search(grp_id, s_term){
+function search(grp_id, s_term,tok){
 	var search_host = "http://localhost:4567";
-	$.post(search_host+"/search", {group_id: grp_id, search_term: s_term}, function (data){
+	$.post(search_host+"/search", {group_id: grp_id, search_term: s_term,token: tok }, function (data){
 		alert(data.test)
 	})
 }

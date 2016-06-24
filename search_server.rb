@@ -2,6 +2,8 @@ require 'sinatra'
 require 'json'
 require 'net/http'
 require 'erb'
+require_relative 'miner.rb'
+
 def get_groups(token)
 	uri = URI('https://api.groupme.com/v3/groups')
 	params = { :token => token }
@@ -14,10 +16,10 @@ def get_groups(token)
 end
 
 get '/create_user' do
-	token=params['access_token']
+	@token=params['access_token']
 	puts "----------------------"
 
-	@groups= get_groups(token)
+	@groups= get_groups(@token)
 	
 	puts "---------------------"
     erb :search
@@ -26,7 +28,9 @@ end
 post '/search' do 
 	search_term = params['search_term']
 	group_id = params['group_id']
+	token = params['token']
 	puts "search_term : #{search_term} group_id #{group_id}"
+	mine(token,group_id)
 	 content_type :json
   { :test => 'hello from sinatra' }.to_json
 end
