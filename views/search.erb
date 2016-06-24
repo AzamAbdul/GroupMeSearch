@@ -20,7 +20,7 @@
 			<div class="row group_row"> 
 				<% end %>
 				<div class="col-md-4 group" onclick=<%="test(this,\'r#{@group_num.to_s}\')"%>>
-					<input type="radio" name="rGroup" value=<%= group["id"]%> id=<%= "r"+@group_num.to_s %> >
+					<input type="radio" name="group_selected" value=<%= group["id"]%> id=<%= "r"+@group_num.to_s %> >
 					<label for=<%= "r"+@group_num.to_s %>></label>
 					<div class="col-md-2 ">
 						<% if group["image_url"]==nil %>
@@ -58,6 +58,12 @@
 						<i class="glyphicon glyphicon-search"></i>
 					</button>
 				</span>
+			</div>
+		</div>
+		<div class="row"> 
+			<div id="error" class="col-md-10 col-md-offset-1 err">
+
+				
 			</div>
 		</div>
 	</div>

@@ -23,3 +23,11 @@ get '/create_user' do
     erb :search
 end
 
+post '/search' do 
+	search_term = params['search_term']
+	group_id = params['group_id']
+	puts "search_term : #{search_term} group_id #{group_id}"
+	 content_type :json
+  { :test => 'hello from sinatra' }.to_json
+end
+
