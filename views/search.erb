@@ -19,7 +19,7 @@
 
 			<div class="row group_row"> 
 				<% end %>
-				<div class="col-md-4 group" onclick=<%="test(this,\'r#{@group_num.to_s}\')"%>>
+				<div class="col-md-4 group" onclick=<%="remove_prev(this,\'r#{@group_num.to_s}\')"%>>
 					<input type="radio" name="group_selected" value=<%= group["id"]%> id=<%= "r"+@group_num.to_s %> >
 					<label for=<%= "r"+@group_num.to_s %>></label>
 					<div class="col-md-2 ">

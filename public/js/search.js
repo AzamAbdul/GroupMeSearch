@@ -9,7 +9,7 @@ var driver= function(){
 	})
 
 }
-function test(group_element, group_radio_id){
+function remove_prev(group_element, group_radio_id){
 	var elems = document.querySelectorAll(".group");
 
 	[].forEach.call(elems, function(el) {

@@ -17,9 +17,6 @@ def page_through(group_id, tok,before_id=nil)
 	res = Net::HTTP.get_response(uri)
 	return res
 end
-def insert_into_db(connection,message_json)	
-
-end
 
 def estab_db_connection()
 	config_table= YAML::load_file('search.conf')
