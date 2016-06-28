@@ -31,7 +31,10 @@ post '/search' do
 	token = params['token']
 	puts "search_term : #{search_term} group_id #{group_id}"
 	mine(token,group_id)
+	results = search(search_term, group_id)
 	 content_type :json
-  { :test => 'hello from sinatra' }.to_json
+	 puts "results length: #{results.length}"
+	 	# f.puts m_json
+  	JSON.generate(results)
 end
 
