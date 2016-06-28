@@ -3,13 +3,18 @@ h2{
 	text-align: left;
 
 }
-h1{
-    text-align: center;
+
+
+
+
+h1{ 
     font-size: 40px;
-    color:white;
+    color:#2196F3;
+    text-align: center;
 }
+
 body{
-	background-color: #325773;
+	background-color: #F8F8FF;
 	font-variant: sans-serif;
 	font-weight: bold;
     overflow: hidden;
@@ -22,7 +27,7 @@ body{
     border-image-width: initial;
     border-image-outset: initial;
     border-image-repeat: initial;
-   
+   box-shadow: rgb(17, 17, 17) 1px 1px 1px 1px;
     border-width: 2px;
     border-style: solid;
     padding: 20px;

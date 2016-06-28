@@ -93,9 +93,16 @@ function search(grp_id, s_term,tok){
 		 $("body").css({"overflow":"visible"});
 
 		 $(".results").show()
-		 window.location.hash = '#results_form';
+		 scrollToElement('#results_form',2000)
+		 
 	})
 }
 $(document).ready(function () {
 	driver()
 });
+var scrollToElement = function(el, ms){
+    var speed = (ms) ? ms : 600;
+    $('html,body').animate({
+        scrollTop: $(el).offset().top
+    }, speed);
+}
